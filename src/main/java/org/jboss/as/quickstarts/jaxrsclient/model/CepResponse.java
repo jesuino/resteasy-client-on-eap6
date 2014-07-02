@@ -1,5 +1,8 @@
 package org.jboss.as.quickstarts.jaxrsclient;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class CepResponse{
 	private String cep;
 	private String tipoDeLogradouro;

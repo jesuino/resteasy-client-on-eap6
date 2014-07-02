@@ -99,16 +99,28 @@
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxrs</artifactId>
-            <scope>provided</scope>
+	    <!-- Change the scope to use my own RESTEasy classes and providers -->
+            <!--<scope>provided</scope>-->
         </dependency>
+	<!-- Adding JSON Providers -->
+	   <dependency>
+	      <groupId>org.jboss.resteasy</groupId>
+	      <artifactId>resteasy-jaxb-provider</artifactId>
+	   </dependency>
+	<dependency>
+		<groupId>org.jboss.resteasy</groupId>
+		<artifactId>resteasy-jackson-provider</artifactId>
+	</dependency>	   
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpcore</artifactId>
             <version>${version.org.apache.httpcomponents}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.jboss.spec.javax.servlet</groupId>

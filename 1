@@ -53,7 +53,10 @@
       <module name="javax.xml.ws.api" export="true"/>
       <!-- This one always goes last. -->
       <module name="javax.api" export="true"/>
-      <!-- Adding resteasy client dependency -->
+      <!-- Adding resteasy dependencies 
+      <module name="org.jboss.resteasy.resteasy-jaxb-provider" />
+      <module name="org.jboss.resteasy.resteasy-jackson-provider" services="import" />
+      <module name="org.codehaus.jackson.jackson-core-asl"/>-->
       <module name="org.apache.httpcomponents" services="export" export="true"/>
     </dependencies>
   </deployment>
