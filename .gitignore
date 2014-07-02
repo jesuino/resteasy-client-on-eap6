@@ -3,6 +3,14 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+#maven 
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
 # Package Files #
 *.jar
 *.war
