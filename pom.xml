@@ -24,7 +24,7 @@
     <description>jax-rs-client: Demonstrates the use an external JAX-RS RestEasy client Running on EAP 6.x</description>
     <artifactId>resteasy-client-on-eap6</artifactId>
     <version>6.2.0.GA</version>
-
+    <packaging>war</packaging>
 
     <url>http://jboss.org/jbossas</url>
 
@@ -48,6 +48,7 @@
         <!-- Define the version of the JBoss BOMs we want to import to specify tested stacks. -->
         <version.jboss.bom.eap>6.2.0.GA</version.jboss.bom.eap>
 
+        <version.jboss.maven.plugin>7.4.Final</version.jboss.maven.plugin>
         <!-- Other dependency versions -->
         <version.org.apache.httpcomponents>4.1.4</version.org.apache.httpcomponents>
         <version.commons.logging>1.1.1</version.commons.logging>
@@ -108,24 +109,28 @@
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.jboss.spec.javax.servlet</groupId>
+            <artifactId>jboss-servlet-api_3.0_spec</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
     <build>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>${version.surefire.plugin}</version>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${version.war.plugin}</version>
                 <configuration>
-                    <systemProperties>
-                        <property>
-                            <name>xmlUrl</name>
-                            <value>http://localhost:8080/jboss-helloworld-rs/rest/xml</value>
-                        </property>
-                        <property>
-                            <name>jsonUrl</name>
-                            <value>http://localhost:8080/jboss-helloworld-rs/rest/json</value>
-                        </property>
-                    </systemProperties>
+                    <!-- Java EE 6 doesn't require web.xml, Maven needs to catch up! -->
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
+            </plugin>
+            <!-- JBoss AS plugin to deploy war -->
+            <plugin>
+                <groupId>org.jboss.as.plugins</groupId>
+                <artifactId>jboss-as-maven-plugin</artifactId>
+                <version>${version.jboss.maven.plugin}</version>
             </plugin>
         </plugins>
     </build>

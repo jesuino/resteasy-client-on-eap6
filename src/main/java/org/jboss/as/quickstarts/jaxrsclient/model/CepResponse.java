@@ -1,5 +1,5 @@
+package org.jboss.as.quickstarts.jaxrsclient;
 
-// {"cep":"70855100","tipoDeLogradouro":"SQN","logradouro":"407 Bloco J","bairro":"Asa Norte","cidade":"Brasília","estado":"DF"}
 public class CepResponse{
 	private String cep;
 	private String tipoDeLogradouro;
