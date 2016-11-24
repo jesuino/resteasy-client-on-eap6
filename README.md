@@ -1,5 +1,7 @@
-resteasy-client-on-eap6
+RESTEasy client running on JBOss EAP 6.x
 =======================
+
+**This information might be deprecated, but it can be used as an example**
 
 A RESTEasy client APP configured to run on EAP 6.x
 
@@ -10,7 +12,7 @@ When we deploy an application that isn't a JAX-RS application, but uses RESTeasy
 This application is based on EAP 6.2 quickstarts and to deploy it simply start EAP 6.2 and use the following maven command to deploy it:
 
 
-mvn clean package jboss-as:deploy
+`mvn clean package jboss-as:deploy`
 
 
 
